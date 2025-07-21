@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tambola Ticket Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tambola Ticket Booking & Game</h1>
+  </header>
+
+  <main>
+    <section class="controls">
+      <div>
+        <label for="ticketCount">Number of Tickets (Max 600):</label>
+        <input type="number" id="ticketCount" min="1" max="600" />
+        <button onclick="generateBulkTickets()">Generate Tickets</button>
+      </div>
+      <div>
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="drawNumber()">Draw Number</button>
+        <label><input type="checkbox" id="autoPlayToggle" onchange="toggleAutoPlay()"> Auto Draw</label>
+        <button onclick="resetGame()">Reset</button>
+        <button id="showAvailable" onclick="updateAvailableDisplay()">Show Available Tickets</button>
+      </div>
+    </section>
+
+    <section id="lastNumberSection">
+      <h2 id="lastNumber"></h2>
+    </section>
+
+    <section id="drawnNumbersContainer">
+      <h3>Drawn Numbers:</h3>
+      <p id="drawnNumbers"></p>
+    </section>
+
+    <section>
+      <h3>Winner Settings</h3>
+      <div class="winner-setting">
+        <label><input type="checkbox" value="top-line"> Top Line</label>
+        <label><input type="checkbox" value="middle-line"> Middle Line</label>
+        <label><input type="checkbox" value="bottom-line"> Bottom Line</label>
+        <label><input type="checkbox" value="full-house"> Full House</label>
+        <button onclick="saveWinnerSettings()">Save Settings</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>Winners</h3>
+      <ul id="winnersList"></ul>
+    </section>
+
+    <section id="availableContainer"></section>
+    <section id="bulkTicketContainer" class="ticket-area"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tambola Game</p>
+  </footer>
+</body>
+</html>
